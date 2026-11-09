@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070a1f">
+<meta name="robots" content="noindex, nofollow">
+<title>Counting every second…</title>
+<meta property="og:title" content="Counting every second…">
+<meta property="og:description" content="Something special is coming.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💗%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app" data-state="wait">
+  <div class="bg" aria-hidden="true"></div>
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <main>
+    <section id="wait">
+      <p class="eyebrow stg" style="--d:.2s" id="eyebrow"></p>
+      <h1 class="poem stg" style="--d:.5s" id="title"></h1>
+
+      <div class="clock stg" style="--d:.9s" role="timer" aria-label="Countdown">
+        <div class="unit"><span class="num" id="n-days">00</span><span class="lbl" id="l-days"></span></div>
+        <div class="unit"><span class="num" id="n-hours">00</span><span class="lbl" id="l-hours"></span></div>
+        <div class="unit"><span class="num" id="n-minutes">00</span><span class="lbl" id="l-minutes"></span></div>
+        <div class="unit sec"><span class="num" id="n-seconds">00</span><span class="lbl" id="l-seconds"></span></div>
+      </div>
+      <p class="sr" id="sr" aria-live="polite"></p>
+
+      <p class="until stg" style="--d:1.3s" id="until"></p>
+      <p class="sub stg" style="--d:1.6s" id="subtitle"></p>
+    </section>
+
+    <section id="done" hidden>
+      <h2 class="script" id="d-script"></h2>
+      <p class="d-sub" id="d-sub"></p>
+      <p class="d-lines" id="d-lines"></p>
+      <p class="d-note" id="d-note"></p>
+    </section>
+  </main>
+
+  <svg class="skyline" viewBox="0 0 400 150" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs><linearGradient id="skyg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34104a"/><stop offset="1" stop-color="#0b0618"/></linearGradient></defs>
+    <g fill="url(#skyg)" stroke="#ff5c9a" stroke-width=".9" stroke-opacity=".8" stroke-linejoin="round" style="filter:drop-shadow(0 0 3px rgba(255,70,140,.85))">
+      <rect x="0" y="108" width="24" height="42"/><rect x="24" y="96" width="18" height="54"/><rect x="42" y="112" width="20" height="38"/>
+      <path d="M67 150 L68.6 70 L71.4 70 L73 150Z"/><path d="M62 150 L70 96 L78 150Z" fill-opacity=".9"/>
+      <circle cx="70" cy="64" r="8"/><path d="M70 56 L70 14" fill="none" stroke-width="1.3"/><path d="M63 68 h14" fill="none"/>
+      <rect x="80" y="104" width="22" height="46"/><rect x="102" y="116" width="26" height="34"/><rect x="128" y="100" width="16" height="50"/>
+      <rect x="144" y="118" width="30" height="32"/><rect x="174" y="108" width="20" height="42"/><rect x="194" y="122" width="26" height="28"/>
+      <rect x="220" y="110" width="18" height="40"/><rect x="238" y="124" width="24" height="26"/><rect x="262" y="114" width="20" height="36"/>
+      <path d="M290 150 v-26 q14 -22 28 0 v26Z"/><rect x="286" y="120" width="34" height="4"/>
+      <rect x="326" y="58" width="8" height="92"/><path d="M324 58 h12 l-6 -12Z"/><path d="M330 46 v-9" fill="none" stroke-width="1.2"/><rect x="323" y="80" width="14" height="3"/>
+      <rect x="344" y="118" width="24" height="32"/><rect x="368" y="108" width="32" height="42"/>
+      <path d="M262 150 C264 130 268 116 280 100" fill="none" stroke-width="2"/><path d="M280 100 q-14 -6 -22 4 M280 100 q-4 -14 -16 -16 M280 100 q10 -12 24 -8 M280 100 q14 2 20 14" fill="none" stroke-width="1.6"/>
+    </g>
+  </svg>
+</div>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
